@@ -1,0 +1,27 @@
+@mixin region-gradient($region) {
+  background: linear-gradient(to right, var(--region-#{$region}-primary), var(--region-#{$region}-secondary));
+}
+
+// @mixin islands {
+//   background: linear-gradient(left right var(--region-islands-primary) var(--region-islands-secondary));
+// }
+
+// @mixin islay {
+//   background: linear-gradient(left right var(--region-islay-primary) var(--region-islay-secondary));
+// }
+
+// @mixin highland {
+//   background: linear-gradient(left right var(--region-highland-primary) var(--region-highland-secondary));
+// }
+
+// @mixin lowland {
+//   background: linear-gradient(left right var(--region-lowland-primary) var(--region-lowland-secondary));
+// }
+
+// @mixin speyside {
+//   background: linear-gradient(left right var(--region-speyside-primary) var(--region-speyside-secondary));
+// }
+
+// @mixin campbeltown {
+//   background: linear-gradient(left right var(--region-campbeltown-primary) var(--region-campbeltown-secondary));
+// }

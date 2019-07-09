@@ -1,0 +1,103 @@
+:host {
+  width: 30%;
+  height: 544px;
+  margin-bottom: 50px;
+  position: relative;
+  text-align: center;
+  background: url(assets/images/card-bg.svg) no-repeat top left;
+  background-size: contain;
+  background-color: #383838;
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+
+.whiskey-card img {
+  // min-width: 160px;
+  // max-width: 205px;
+  width: 160px;
+  position: absolute;
+  bottom: -36px;
+  right: -36px;
+}
+
+.location-marker {
+  position: absolute;
+  top: 36px;
+  right: -10px;
+  height: 4px;
+  width: 50px;
+  background-color: red;
+}
+
+.whiskey-details {
+  z-index: 10;
+  position: absolute;
+  text-align: left;
+  bottom: 96px;
+  left: 36px;
+
+  h2, h3 {
+    color: #fff;
+    font-size: 36px;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  p {
+    margin-top: 0;
+    font-size: 18px;
+    color: gray;
+  }
+}
+
+.whiskey-notes {
+  transform: skew(-10deg);
+  border-radius: 5px;
+  position: absolute;
+  left: -15px;
+  height: 60px;
+  line-height: 60px;
+  bottom: 36px;
+  background-color: blue;
+  color: white;
+  font-size: 14px;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .note {
+    margin: 0 10px;
+    transform: skew(10deg);
+  }
+}
+
+.gradient-islands {
+  @include region-gradient('islands');
+}
+
+.gradient-islay {
+  @include region-gradient('islay');
+}
+
+.gradient-highland {
+  @include region-gradient('highland');
+}
+
+.gradient-lowland {
+  @include region-gradient('lowland');
+}
+
+.gradient-speyside {
+  @include region-gradient('speyside');
+}
+
+.gradient-campbeltown {
+  @include region-gradient('campbeltown');
+}
