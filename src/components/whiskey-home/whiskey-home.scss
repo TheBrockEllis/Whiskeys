@@ -7,3 +7,20 @@ div.container {
   justify-content: space-between;
   align-items: flex-start;
 }
+
+.whiskey-filter {
+  text-align: center;
+  margin: 50px 0;
+
+  li {
+    display: inline;
+    margin: 0 25px;
+    padding: 7px 15px;
+    border-radius: 25px;
+    border: 1px solid #b0b0b0;
+
+    &.active {
+      background-color: #f1f1f1;
+    }
+  }
+}
