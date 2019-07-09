@@ -1,41 +1,19 @@
-# Stencil App Starter
+# Whiskies
 
-Stencil is a compiler for building fast web apps using Web Components.
+Build a page that contains a collection of popular whiskies, controls to filter these whiskies by their region, and an article that relates to this collection.
 
-Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool.  Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
+The JSON files provided (articles.json and whiskies.json) should be treated as if they were coming from an external API. The format can be assumed to be stable, but it cannot be modified.
 
-Stencil components are just Web Components, so they work in any major framework or with no framework at all. In many cases, Stencil can be used as a drop in replacement for traditional frontend frameworks given the capabilities now available in the browser, though using it as such is certainly not required.
+Each item in the collection should follow the diagram provided (component.png) and should link to its own page, where it can be purchased. Each region also has a pair of colors associated with it, so you will need to apply these where appropriate. The article should simply link — in a new tab — to the website where the article was originally published.
 
-Stencil also enables a number of key capabilities on top of Web Components, in particular Server Side Rendering (SSR) without the need to run a headless browser, pre-rendering, and objects-as-properties (instead of just strings).
+You may use any technologies you wish to build this page, but approach this task as if you were writing code that will be used in production. So writing performant code, and following best practices in each language used. Note: Not minifying CSS and Javascript is ok for this test, but please explain why this is important.
 
-## Getting Started
+## What you will Need
 
-To start a new project using Stencil, clone this repo to a new directory:
-
-```bash
-npm init stencil app
-```
-
-and run:
-
-```bash
-npm start
-```
-
-To build the app for production, run:
-
-```bash
-npm run build
-```
-
-To run the unit tests once, run:
-
-```
-npm test
-```
-
-To run the unit tests and watch for file changes during development, run:
-
-```
-npm run test.watch
-```
+- The JSON files (provided)
+- The font Cabin, in regular and bold weights
+- A collection of whiskey images (provided)
+- A sample of the component to design to (provided)
+- The colors used for each region (provided)
+- The card background (provided)
+- An article image (provided)
