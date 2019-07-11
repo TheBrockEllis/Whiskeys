@@ -5,6 +5,7 @@
   "description": "Stencil App Starter",
   "scripts": {
     "build": "stencil build",
+    "deploy": "stencil build && cp src/_redirects www/_redirects",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
