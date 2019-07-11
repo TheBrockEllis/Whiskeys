@@ -7,11 +7,17 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
+  Article,
+} from './types/article';
+import {
   Whiskey,
 } from './types/whiskey';
 
 export namespace Components {
   interface AppRoot {}
+  interface WhiskeyArticle {
+    'article': Article;
+  }
   interface WhiskeyCard {
     'whiskey': Whiskey;
   }
@@ -26,6 +32,12 @@ declare global {
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
     new (): HTMLAppRootElement;
+  };
+
+  interface HTMLWhiskeyArticleElement extends Components.WhiskeyArticle, HTMLStencilElement {}
+  var HTMLWhiskeyArticleElement: {
+    prototype: HTMLWhiskeyArticleElement;
+    new (): HTMLWhiskeyArticleElement;
   };
 
   interface HTMLWhiskeyCardElement extends Components.WhiskeyCard, HTMLStencilElement {}
@@ -47,6 +59,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'app-root': HTMLAppRootElement;
+    'whiskey-article': HTMLWhiskeyArticleElement;
     'whiskey-card': HTMLWhiskeyCardElement;
     'whiskey-filter': HTMLWhiskeyFilterElement;
     'whiskey-home': HTMLWhiskeyHomeElement;
@@ -55,6 +68,9 @@ declare global {
 
 declare namespace LocalJSX {
   interface AppRoot extends JSXBase.HTMLAttributes<HTMLAppRootElement> {}
+  interface WhiskeyArticle extends JSXBase.HTMLAttributes<HTMLWhiskeyArticleElement> {
+    'article'?: Article;
+  }
   interface WhiskeyCard extends JSXBase.HTMLAttributes<HTMLWhiskeyCardElement> {
     'whiskey'?: Whiskey;
   }
@@ -65,6 +81,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'app-root': AppRoot;
+    'whiskey-article': WhiskeyArticle;
     'whiskey-card': WhiskeyCard;
     'whiskey-filter': WhiskeyFilter;
     'whiskey-home': WhiskeyHome;

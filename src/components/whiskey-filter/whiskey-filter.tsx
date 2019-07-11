@@ -5,7 +5,7 @@ import { Component, h, Event, EventEmitter, State } from '@stencil/core';
   styleUrl: 'whiskey-filter.scss',
   shadow: true
 })
-export class AppHome {
+export class WhiskeyFilter {
   @Event() whiskeysFiltered: EventEmitter;
   @State() currentRegion: string = 'all';
   @State() regions: string[] = [

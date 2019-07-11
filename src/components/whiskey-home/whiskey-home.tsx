@@ -7,7 +7,7 @@ import { Article } from '../../types/article';
   styleUrl: 'whiskey-home.scss',
   shadow: true
 })
-export class AppHome {
+export class WhiskeyHome {
   @Element() el: HTMLElement;
   @State() whiskeys: Whiskey[] = [];
   @State() displayWhiskeys: Whiskey[] = [];
@@ -32,30 +32,35 @@ export class AppHome {
     Promise.all([whiskiesPromise, articlesPromise]).then( (values: any) => {
       this.whiskeys = values[0];
       this.articles = values[1];
-
       this.displayWhiskeys = this.whiskeys;
     });
   }
 
   render() {
     return (
-      <div class='whiskey-home'>
+      <main class='whiskey-home'>
         
         <whiskey-filter></whiskey-filter>
 
-        <div class='container'>
+        <div class='container flex'>
           {
             this.displayWhiskeys.length === 0
             ? <p class='noWhiskeyError'>No whiskeys in that region</p>
             : ''
           }
 
-          {this.displayWhiskeys.map((whiskey: Whiskey) =>
+          {this.displayWhiskeys.map((whiskey: Whiskey) => 
             <whiskey-card whiskey={whiskey}></whiskey-card>
           )}
         </div>
-       
-      </div>
+
+        <div class='container'>
+          {this.articles.map((article: Article) =>
+            <whiskey-article article={article}></whiskey-article>
+          )}
+        </div>
+
+      </main>
     );
   }
 }
