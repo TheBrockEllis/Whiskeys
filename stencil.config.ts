@@ -4,7 +4,7 @@ import { sass } from '@stencil/sass';
 // https://stenciljs.com/docs/config
 
 export const config: Config = {
-  globalStyle: 'src/global/app.scss',
+  globalStyle: 'src/global/app.css',
   globalScript: 'src/global/app.ts',
   outputTargets: [
     {
@@ -21,5 +21,10 @@ export const config: Config = {
         'src/global/mixins.scss'
       ]}
     )
-  ]
+  ],
+  devServer: {
+    reloadStrategy: "pageReload",
+    openBrowser: false,
+    port: 1337
+  }
 };

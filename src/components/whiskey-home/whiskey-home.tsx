@@ -26,8 +26,8 @@ export class WhiskeyHome {
   }
   
   componentWillLoad() {
-    let whiskiesPromise = fetch('assets/fixtures/whiskies.json').then((response: Response) => response.json());
-    let articlesPromise = fetch('assets/fixtures/articles.json').then((response: Response) => response.json());
+    let whiskiesPromise = fetch('/assets/fixtures/whiskies.json').then((response: Response) => response.json());
+    let articlesPromise = fetch('/assets/fixtures/articles.json').then((response: Response) => response.json());
 
     Promise.all([whiskiesPromise, articlesPromise]).then( (values: any) => {
       this.whiskeys = values[0];

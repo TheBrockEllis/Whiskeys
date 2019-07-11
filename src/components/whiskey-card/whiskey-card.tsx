@@ -17,20 +17,22 @@ export class WhiskeyCard {
   render() {
     return (
       <div class='whiskey-card'>
-        <div class={`location-marker gradient-${this.whiskey.region}`}></div>
-        <div class='whiskey-details'>
-          <h2>{this.whiskey.title}</h2>
-          <p>{this.whiskey.region} Region</p>
-          <h3>${this.whiskey.cost}</h3>
-        </div>
-        <div class={`whiskey-notes gradient-${this.whiskey.region}`}>
-          {
-            this.whiskey.tasting_notes.map( (note: string) => {
-              return <span class='note'>{note}</span>;
-            })
-          }
-        </div>
-        <img src={`assets/images/${this.whiskey.image}`} />
+        <a href={this.whiskey.url}>
+          <div class={`location-marker gradient-${this.whiskey.region}`}></div>
+          <div class='whiskey-details'>
+            <h2>{this.whiskey.title}</h2>
+            <p>{this.whiskey.region} Region</p>
+            <h3>${this.whiskey.cost}</h3>
+          </div>
+          <div class={`whiskey-notes gradient-${this.whiskey.region}`}>
+            {
+              this.whiskey.tasting_notes.map((note: string) => {
+                return <span class='note'>{note}</span>;
+              })
+            }
+          </div>
+          <img src={`/assets/images/${this.whiskey.image}`} />
+        </a>
       </div>
     );
   }

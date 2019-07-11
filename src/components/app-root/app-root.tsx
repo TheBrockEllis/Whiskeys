@@ -17,6 +17,8 @@ export class AppRoot {
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url='/' component='whiskey-home' exact={true} />
+              <stencil-route url="/blends/:whiskey" component="whiskey-detail" />
+              <stencil-route url="/:whiskey" component="whiskey-detail" />
             </stencil-route-switch>
           </stencil-router>
         </main>

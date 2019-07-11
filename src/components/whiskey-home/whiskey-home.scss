@@ -1,4 +1,10 @@
-div.container {
+.noWhiskeyError {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 32px;
+}
+
+.container {
   padding: 0 100px;
  
   &.flex {
@@ -9,10 +15,4 @@ div.container {
     justify-content: space-between;
     align-items: flex-start;
   }
-}
-
-.noWhiskeyError {
-  flex-basis: 100%;
-  text-align: center;
-  font-size: 32px;
 }

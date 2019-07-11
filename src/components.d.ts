@@ -12,6 +12,9 @@ import {
 import {
   Whiskey,
 } from './types/whiskey';
+import {
+  MatchResults,
+} from '@stencil/router';
 
 export namespace Components {
   interface AppRoot {}
@@ -20,6 +23,9 @@ export namespace Components {
   }
   interface WhiskeyCard {
     'whiskey': Whiskey;
+  }
+  interface WhiskeyDetail {
+    'match': MatchResults;
   }
   interface WhiskeyFilter {}
   interface WhiskeyHome {}
@@ -46,6 +52,12 @@ declare global {
     new (): HTMLWhiskeyCardElement;
   };
 
+  interface HTMLWhiskeyDetailElement extends Components.WhiskeyDetail, HTMLStencilElement {}
+  var HTMLWhiskeyDetailElement: {
+    prototype: HTMLWhiskeyDetailElement;
+    new (): HTMLWhiskeyDetailElement;
+  };
+
   interface HTMLWhiskeyFilterElement extends Components.WhiskeyFilter, HTMLStencilElement {}
   var HTMLWhiskeyFilterElement: {
     prototype: HTMLWhiskeyFilterElement;
@@ -61,6 +73,7 @@ declare global {
     'app-root': HTMLAppRootElement;
     'whiskey-article': HTMLWhiskeyArticleElement;
     'whiskey-card': HTMLWhiskeyCardElement;
+    'whiskey-detail': HTMLWhiskeyDetailElement;
     'whiskey-filter': HTMLWhiskeyFilterElement;
     'whiskey-home': HTMLWhiskeyHomeElement;
   }
@@ -74,6 +87,9 @@ declare namespace LocalJSX {
   interface WhiskeyCard extends JSXBase.HTMLAttributes<HTMLWhiskeyCardElement> {
     'whiskey'?: Whiskey;
   }
+  interface WhiskeyDetail extends JSXBase.HTMLAttributes<HTMLWhiskeyDetailElement> {
+    'match'?: MatchResults;
+  }
   interface WhiskeyFilter extends JSXBase.HTMLAttributes<HTMLWhiskeyFilterElement> {
     'onWhiskeysFiltered'?: (event: CustomEvent<any>) => void;
   }
@@ -83,6 +99,7 @@ declare namespace LocalJSX {
     'app-root': AppRoot;
     'whiskey-article': WhiskeyArticle;
     'whiskey-card': WhiskeyCard;
+    'whiskey-detail': WhiskeyDetail;
     'whiskey-filter': WhiskeyFilter;
     'whiskey-home': WhiskeyHome;
   }

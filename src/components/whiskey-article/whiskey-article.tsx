@@ -17,7 +17,7 @@ export class WhiskeyArticle {
     return (
       <article>
         <a href={this.article.url}>
-          <div class='background-image' style={{ backgroundImage: "url(assets/images/" + this.article.img + ")" }}></div>
+          <div class='background-image' style={{ backgroundImage: "url(/assets/images/" + this.article.img + ")" }}></div>
           <div class='content'>
             <h2>{this.article.title}</h2>
             <p>{this.article.teaser}</p>
