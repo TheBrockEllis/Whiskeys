@@ -1,5 +1,7 @@
 # Whiskies
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/06eafe1b-3a83-4f0a-b51c-a7087fad8292/deploy-status)](https://app.netlify.com/sites/whiskey/deploys)
+
 Build a page that contains a collection of popular whiskies, controls to filter these whiskies by their region, and an article that relates to this collection.
 
 The JSON files provided (articles.json and whiskies.json) should be treated as if they were coming from an external API. The format can be assumed to be stable, but it cannot be modified.
