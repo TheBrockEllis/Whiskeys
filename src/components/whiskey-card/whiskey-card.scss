@@ -1,11 +1,13 @@
 :host {
   width: 30%;
+  min-width: 300px;
   height: 544px;
   margin-bottom: 50px;
   position: relative;
   text-align: center;
-  background: url(assets/images/card-bg.svg) no-repeat top left;
-  background-size: contain;
+  background: url(assets/images/card-bg.svg) no-repeat top left, linear-gradient(to top right, #000, #404040, #000);
+  background-size: cover;
+  background-position: top right;
   background-color: #383838;
   text-transform: capitalize;
   border-radius: 5px;
@@ -64,6 +66,7 @@
   height: 60px;
   line-height: 60px;
   bottom: 36px;
+  margin-right: 36px;
   background-color: blue;
   color: white;
   font-size: 14px;
