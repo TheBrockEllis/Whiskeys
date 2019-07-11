@@ -1,6 +1,7 @@
 :host {
   width: 30%;
   min-width: 300px;
+  max-width: 50%;
   height: 544px;
   margin-bottom: 50px;
   position: relative;
@@ -14,8 +15,6 @@
 }
 
 .whiskey-card img {
-  // min-width: 160px;
-  // max-width: 205px;
   width: 160px;
   position: absolute;
   bottom: -36px;

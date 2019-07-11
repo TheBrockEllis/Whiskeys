@@ -1,4 +1,4 @@
-import { Component, h, State } from '@stencil/core';
+import { Component, h, State, Element, Listen } from '@stencil/core';
 import { Whiskey } from '../../types/whiskey';
 import { Article } from '../../types/article';
 
@@ -8,9 +8,23 @@ import { Article } from '../../types/article';
   shadow: true
 })
 export class AppHome {
+  @Element() el: HTMLElement;
   @State() whiskeys: Whiskey[] = [];
+  @State() displayWhiskeys: Whiskey[] = [];
   @State() articles: Article[] = [];
 
+  @Listen('whiskeysFiltered')
+  filterWhiskeys(event: CustomEvent) {
+    if(event.detail === 'all') {
+      this.displayWhiskeys = this.whiskeys;
+      return;
+    }
+    
+    this.displayWhiskeys = this.whiskeys.filter( (whiskey: Whiskey) => {
+      return whiskey.region === event.detail;
+    });
+  }
+  
   componentWillLoad() {
     let whiskiesPromise = fetch('assets/fixtures/whiskies.json').then((response: Response) => response.json());
     let articlesPromise = fetch('assets/fixtures/articles.json').then((response: Response) => response.json());
@@ -18,6 +32,8 @@ export class AppHome {
     Promise.all([whiskiesPromise, articlesPromise]).then( (values: any) => {
       this.whiskeys = values[0];
       this.articles = values[1];
+
+      this.displayWhiskeys = this.whiskeys;
     });
   }
 
@@ -25,16 +41,16 @@ export class AppHome {
     return (
       <div class='whiskey-home'>
         
-        <ul class='whiskey-filter'>
-          <li class='active'>All</li>
-          <li>Highland</li>
-          <li>Lowland</li>
-          <li>Islands</li>
-          <li>Isley</li>
-        </ul>
+        <whiskey-filter></whiskey-filter>
 
         <div class='container'>
-          {this.whiskeys.map((whiskey: Whiskey) =>
+          {
+            this.displayWhiskeys.length === 0
+            ? <p class='noWhiskeyError'>No whiskeys in that region</p>
+            : ''
+          }
+
+          {this.displayWhiskeys.map((whiskey: Whiskey) =>
             <whiskey-card whiskey={whiskey}></whiskey-card>
           )}
         </div>

@@ -1,0 +1,27 @@
+.whiskey-filter {
+  text-align: center;
+  margin: 50px 0;
+
+  li {
+    cursor: pointer;
+    color: #b0b0b0;
+    display: inline-block;
+    margin: 0 5px;
+    padding: 7px 15px;
+    border-radius: 25px;
+    border: 1px solid #b0b0b0;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+
+    &.active {
+      background-color: #f1f1f1;
+      color: #000;
+    }
+  }
+}

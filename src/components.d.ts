@@ -15,6 +15,7 @@ export namespace Components {
   interface WhiskeyCard {
     'whiskey': Whiskey;
   }
+  interface WhiskeyFilter {}
   interface WhiskeyHome {}
 }
 
@@ -33,6 +34,12 @@ declare global {
     new (): HTMLWhiskeyCardElement;
   };
 
+  interface HTMLWhiskeyFilterElement extends Components.WhiskeyFilter, HTMLStencilElement {}
+  var HTMLWhiskeyFilterElement: {
+    prototype: HTMLWhiskeyFilterElement;
+    new (): HTMLWhiskeyFilterElement;
+  };
+
   interface HTMLWhiskeyHomeElement extends Components.WhiskeyHome, HTMLStencilElement {}
   var HTMLWhiskeyHomeElement: {
     prototype: HTMLWhiskeyHomeElement;
@@ -41,6 +48,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'app-root': HTMLAppRootElement;
     'whiskey-card': HTMLWhiskeyCardElement;
+    'whiskey-filter': HTMLWhiskeyFilterElement;
     'whiskey-home': HTMLWhiskeyHomeElement;
   }
 }
@@ -50,11 +58,15 @@ declare namespace LocalJSX {
   interface WhiskeyCard extends JSXBase.HTMLAttributes<HTMLWhiskeyCardElement> {
     'whiskey'?: Whiskey;
   }
+  interface WhiskeyFilter extends JSXBase.HTMLAttributes<HTMLWhiskeyFilterElement> {
+    'onWhiskeysFiltered'?: (event: CustomEvent<any>) => void;
+  }
   interface WhiskeyHome extends JSXBase.HTMLAttributes<HTMLWhiskeyHomeElement> {}
 
   interface IntrinsicElements {
     'app-root': AppRoot;
     'whiskey-card': WhiskeyCard;
+    'whiskey-filter': WhiskeyFilter;
     'whiskey-home': WhiskeyHome;
   }
 }
