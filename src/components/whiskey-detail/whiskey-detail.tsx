@@ -19,8 +19,6 @@ export class WhiskeyDetail {
       .then((response: Response) => response.json())
       .then( (whiskeys: Whiskey[]) => {
         whiskeys.map( (whiskey: Whiskey) => {
-          console.log('checking', whiskey.title.toLowerCase(), this.whiskeyName);
-
           // Needed because the title in the API has a typo
           whiskey.title = whiskey.title.replace('Spingbank', 'Springbank');
 

@@ -9,10 +9,6 @@ import { Article } from '../../types/article';
 export class WhiskeyArticle {
   @Prop() article: Article;
 
-  componentWillLoad() {
-    console.log('will load article');
-  }
-
   render() {
     return (
       <article>
