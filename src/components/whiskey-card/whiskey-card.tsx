@@ -31,7 +31,7 @@ export class WhiskeyCard {
               })
             }
           </div>
-          <img src={`/assets/images/${this.whiskey.image}`} />
+          <img src={`/assets/images/${this.whiskey.image}`} alt={this.whiskey.title} title={`A photo of a bottle of ${this.whiskey.title}`} />
         </div>
       </a>
     );
