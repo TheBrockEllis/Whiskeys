@@ -16,8 +16,8 @@ export class WhiskeyCard {
 
   render() {
     return (
-      <div class='whiskey-card'>
-        <a href={this.whiskey.url}>
+      <a href={this.whiskey.url}>
+        <div class='whiskey-card'>
           <div class={`location-marker gradient-${this.whiskey.region}`}></div>
           <div class='whiskey-details'>
             <h2>{this.whiskey.title}</h2>
@@ -32,8 +32,8 @@ export class WhiskeyCard {
             }
           </div>
           <img src={`/assets/images/${this.whiskey.image}`} />
-        </a>
-      </div>
+        </div>
+      </a>
     );
   }
 }

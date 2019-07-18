@@ -38,7 +38,7 @@ export class WhiskeyHome {
 
   render() {
     return (
-      <main class='whiskey-home'>
+      <div class='whiskey-home'>
         
         <whiskey-filter></whiskey-filter>
 
@@ -60,7 +60,7 @@ export class WhiskeyHome {
           )}
         </div>
 
-      </main>
+      </div>
     );
   }
 }
